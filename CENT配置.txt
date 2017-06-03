@@ -1,0 +1,28 @@
+yum install  -y epel-release
+yum update
+
+#一些基础库
+yum install -y sysstat python-pefile mscompress cabextract lsof flex bison net-tools bridge-utils python-devel brctl python-pip perf ctags screen libevent* memcached libtool* automake autoconf lrzsz ctags tree gdb* kernel-devel kernel-headers cmakegit lldb glibc-debuginfo*  glibc* gcc* gcc-c++ gcc-gfortran compat-gcc-44 compat-gcc-44-c++ compat-gcc-44-gfortran compat-libf2c-34 make gdb zlib-devel bzip2-devel pcre-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel uwsgi-plugin-python libxml* uwsgi
+ 
+#手动编译QEMU需要用到的库
+yum install  -y lzo-devel libssh2-devel libusb-devel libusb1-devel numactl-devel SDL-devel gnutls-devel cyrus-sasl-devel libjpeg-turbo-devel libpng-devel libuuid-devel libcap-ng-devel ncurses-devel libcurl-devel libaio-devel
+#QEMU可自动安装的库
+yum install  -y qemu qemu-kvm qemu-img virt-manager libvirt libvirt-python python-virtinst python-virtualenv libvirt-client virt-install virt-viewer  glib* libvirt*
+
+#安装python包 
+pip install --upgrade ULInt32 codecs construct==2.5.5-reupload pefile pdbparse construct hazelcast-python-client kafka-python  python-memcached memory_profiler guppy psutil threadpool Django distribute uwsgi
+
+#新建一个虚拟机
+virt-install  -n aa -r 1024 --disk /home/kvm-bak/aa.img,format=qcow2,size=20  --network bridge=br0 --os-type=linux --os-variant=rhel7.2  --cdrom /home/iso/CentOS-7-x86_64-Minimal-1611.iso  --vnc --vncport=5910 --vnclisten=0.0.0.0
+
+
+#Openvpn 配置
+
+
+100.14上虚拟机密码
+bc_123qwe
+bb/100.101
+bb_102/100.102
+bb_103/100.103
+
+winxp_sp3/100.105
